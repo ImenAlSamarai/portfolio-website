@@ -53,13 +53,24 @@
 }
 
 [data-theme="light"] .nav-resume-btn {
-    color: #3182ce;
-    border-color: #3182ce;
+    color: #2b6cb0;
+    background-color: rgba(49, 130, 206, 0.08);
+    border-color: #2b6cb0;
     font-weight: 500;
+    box-shadow: 0 2px 8px rgba(49, 130, 206, 0.15);
 }
 
 [data-theme="light"] .nav-resume-btn:hover {
-    background-color: rgba(49, 130, 206, 0.1);
+    background-color: rgba(49, 130, 206, 0.15);
+    box-shadow: 0 4px 16px rgba(49, 130, 206, 0.25);
+}
+
+[data-theme="light"] .intro-social-links a {
+    color: var(--text-secondary);
+}
+
+[data-theme="light"] .intro-social-links a:hover {
+    color: var(--accent-color);
 }
 
 /* Light theme intro label - more visible */
@@ -540,10 +551,10 @@ input:checked + .slider:before {
 /* Particle Animation */
 .particle-animation {
     position: relative;
-    top: 0;
+    top: 15px;
     left: 0;
     width: 100%;
-    height: 120px;
+    height: 135px;
     z-index: 1;
     pointer-events: none;
     background: linear-gradient(180deg, var(--bg-color) 0%, rgba(10, 25, 47, 0.95) 70%, rgba(10, 25, 47, 0.8) 100%);
@@ -564,7 +575,7 @@ input:checked + .slider:before {
 /* Navigation Bar */
 .main-nav {
     position: relative;
-    top: 0;
+    top: 17px;
     left: 0;
     width: 100%;
     height: auto;
@@ -586,7 +597,6 @@ input:checked + .slider:before {
     display: flex;
     align-items: center;
     gap: 35px;
-    margin-right: 40px;
 }
 
 .nav-link {
@@ -621,21 +631,24 @@ input:checked + .slider:before {
     display: inline-block;
     text-decoration: none;
     color: var(--accent-color);
+    background-color: rgba(100, 255, 218, 0.08);
     border: 1px solid var(--accent-color);
     border-radius: 4px;
     padding: 12px 20px;
     font-size: 13px;
     font-family: var(--font-mono);
-    font-weight: 400;
+    font-weight: 500;
     transition: var(--transition);
     letter-spacing: 0.5px;
-    width: 95px;
     text-align: center;
+    box-shadow: 0 2px 8px rgba(100, 255, 218, 0.15);
+    white-space: nowrap;
 }
 
 .nav-resume-btn:hover {
-    background-color: rgba(100, 255, 218, 0.1);
+    background-color: rgba(100, 255, 218, 0.15);
     transform: translateY(-1px);
+    box-shadow: 0 4px 16px rgba(100, 255, 218, 0.25);
 }
 
 /* Theme Switch - positioned at top right of particles */
@@ -697,15 +710,91 @@ input:checked + .slider:before {
     width: 100%;
 }
 
+.intro-header {
+    margin-bottom: 15px;
+}
+
+.intro-main {
+    display: flex;
+    gap: 40px;
+    align-items: flex-start;
+}
+
+/* Intro Actions */
+.intro-actions {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+    flex-wrap: wrap;
+    margin-top: 0;
+}
+
+/* Intro Social Links */
+.intro-social-links {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    align-items: center;
+    justify-self: end;
+    margin-left: auto;
+    padding-left: 40px;
+}
+
+.intro-social-links a {
+    color: var(--text-secondary);
+    text-decoration: none;
+    transition: var(--transition);
+    padding: 10px;
+}
+
+.intro-social-links a:hover {
+    color: var(--accent-color);
+    transform: translateY(-3px);
+}
+
+.intro-social-links svg {
+    width: 20px;
+    height: 20px;
+    fill: currentColor;
+}
+
+/* Light theme social links */
+[data-theme="light"] .intro-social-links a {
+    color: var(--text-secondary);
+}
+
+[data-theme="light"] .intro-social-links a:hover {
+    color: var(--accent-color);
+}
+
+/* Responsive design for intro social links */
+@media (max-width: 768px) {
+    .intro-main {
+        flex-direction: column;
+        gap: 30px;
+    }
+    
+    .intro-social-links {
+        flex-direction: row;
+        justify-content: center;
+        margin-left: 0;
+        padding-left: 0;
+        gap: 15px;
+    }
+}
+
+.intro-text-content {
+    flex: 1;
+}
+
 .intro-label {
     color: var(--accent-color);
     font-family: var(--font-mono);
     font-size: 16px;
     font-weight: 400;
-    margin-bottom: 30px;
     letter-spacing: 0.5px;
     opacity: 0.9;
-    max-width: 800px;
+    flex: 1;
 }
 
 .intro-name {
@@ -725,14 +814,14 @@ input:checked + .slider:before {
     line-height: 1.2;
     margin-bottom: 40px;
     letter-spacing: -0.01em;
-    max-width: 900px;
+    max-width: 700px;
 }
 
 .intro-description {
     font-size: 20px;
     line-height: 1.6;
     max-width: 700px;
-    margin-bottom: 50px;
+    margin-bottom: 39px;
     font-weight: 400;
     color: var(--text-secondary);
     font-family: var(--font-paragraph);
@@ -742,6 +831,13 @@ input:checked + .slider:before {
     display: flex;
     gap: 20px;
     flex-wrap: wrap;
+}
+
+@media (max-width: 768px) {
+    .intro-actions {
+        justify-content: center;
+        margin-top: 20px;
+    }
 }
 
 /* Background */
@@ -1097,7 +1193,6 @@ input:checked + .slider:before {
     
     .nav-links {
         gap: 20px;
-        margin-right: 20px;
     }
     
     .nav-link {
@@ -1115,7 +1210,7 @@ input:checked + .slider:before {
     }
     
     .particle-animation {
-        height: 100px;
+        height: 115px;
     }
     
     .main-nav {
@@ -1132,8 +1227,18 @@ input:checked + .slider:before {
         max-width: 100%;
     }
     
+    .intro-header {
+        margin-bottom: 15px;
+    }
+    
+    .intro-actions {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 20px;
+    }
+    
     .intro-label {
-        font-size: 15px;
+        font-size: 13px;
         max-width: 100%;
     }
     
@@ -1179,7 +1284,6 @@ input:checked + .slider:before {
     
     .nav-links {
         gap: 15px;
-        margin-right: 15px;
     }
     
     .nav-link {
@@ -1201,7 +1305,7 @@ input:checked + .slider:before {
     }
     
     .particle-animation {
-        height: 80px;
+        height: 95px;
     }
     
     .main-nav {
@@ -1218,10 +1322,19 @@ input:checked + .slider:before {
         max-width: 100%;
     }
     
+    .intro-header {
+        margin-bottom: 15px;
+    }
+    
+    .intro-actions {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 15px;
+    }
+    
     .intro-label {
-        font-size: 14px;
+        font-size: 12px;
         max-width: 100%;
-        margin-bottom: 25px;
     }
     
     .intro-tagline {
