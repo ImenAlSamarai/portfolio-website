@@ -1,0 +1,426 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Imen Al Samarai - Resume (Backup)</title>
+    <link rel="stylesheet" href="cv/resume.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <!-- jsPDF Library for PDF generation -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/html2canvas/1.4.1/html2canvas.min.js"></script>
+    
+    <!-- SEO and Open Graph -->
+    <meta name="description" content="Imen Al Samarai - Director, Quantitative Research & Machine Learning. PhD in Particle Physics with expertise in AI/ML for systematic alpha generation.">
+    <meta property="og:title" content="Imen Al Samarai - Resume">
+    <meta property="og:description" content="Quantitative Research Director with PhD in Particle Physics and proven expertise in machine learning for systematic alpha generation.">
+    <meta property="og:type" content="website">
+</head>
+<body>
+    <!-- Back to Portfolio Button -->
+    <div class="back-to-portfolio">
+        <a href="index.html" class="back-btn">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path d="M19 12H5M12 19l-7-7 7-7" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+            </svg>
+            Back to Portfolio
+        </a>
+    </div>
+
+    <!-- Zoom Controls -->
+    <div class="zoom-controls">
+        <button class="zoom-btn" id="zoomOut">−</button>
+        <span class="zoom-level" id="zoomLevel">100%</span>
+        <button class="zoom-btn" id="zoomIn">+</button>
+    </div>
+
+    <!-- Download Button -->
+    <div class="download-controls">
+        <button id="downloadPDF" class="download-btn">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                <polyline points="14,2 14,8 20,8" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                <line x1="16" y1="13" x2="8" y2="13" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                <line x1="16" y1="17" x2="8" y2="17" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                <polyline points="10,9 9,9 8,9" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+            </svg>
+            Download PDF
+        </button>
+    </div>
+
+    <!-- A4 Page Container -->
+    <div class="a4-container">
+        <div class="cv-page" id="cv-content">
+        <!-- Header Section -->
+        <header class="header">
+            <div class="header-left">
+                <h1>Imen Al Samarai</h1>
+                <p class="subtitle">Director, Quantitative Research & Machine Learning</p>
+            </div>
+            <div class="header-right">
+                <p>imen.alsamarai@email.com</p>
+                <p>+33 6 XX XX XX XX</p>
+                <p><a href="https://linkedin.com/in/imen-alsamarai">linkedin.com/in/imen-alsamarai</a></p>
+                <p><a href="https://github.com/imen-alsamarai">github.com/imen-alsamarai</a></p>
+            </div>
+        </header>
+
+        <!-- Main Content Grid -->
+        <div class="main-content">
+            <!-- Left Column -->
+            <div class="left-column">
+                <!-- Profile Section -->
+                <section class="section">
+                    <h2 class="section-title">Profile</h2>
+                    <p>Quantitative Research Director with PhD in Particle Physics and proven expertise in machine learning for systematic alpha generation. Successfully transitioned from CERN's cutting-edge ML research to lead high-performing quantitative teams, developing sophisticated signal research platforms that generated measurable P&L impact. Demonstrated ability to scale research operations from individual contributor to directing 7-researcher teams while pioneering ML applications in fixed income markets and establishing systematic research frameworks adopted across trading desks.</p>
+                </section>
+
+                <!-- Core Expertise Section -->
+                <section class="section">
+                    <h2 class="section-title">Core Expertise</h2>
+                    <div class="expertise-item">
+                        <strong>Machine Learning Leadership:</strong> Scaled quantitative research teams from 1 to 7 PhD-level researchers while pioneering ML applications across systematic alpha generation, portfolio optimization (genetic algorithms, LSTM), and market intelligence (NLP sentiment analysis, Random Forests signal detection)
+                    </div>
+                    <div class="expertise-item">
+                        <strong>Technical Stack:</strong> Production Python/C++, enterprise ML pipelines (Docker, Airflow, Spark), Bloomberg/Reuters integration, high-frequency data processing, interactive analytics dashboards
+                    </div>
+                    <div class="expertise-item">
+                        <strong>Systematic Trading Research:</strong> Architected multi-asset platforms generating statistically significant alpha signals across fixed income markets (government, corporate, SSA bonds) with automated relative value scoring, cross-currency analytics, and real-time delivery systems
+                    </div>
+                    <div class="expertise-item">
+                        <strong>Domain Expertise:</strong> Fixed income microstructure, asset swap modeling, statistical arbitrage, factor models, econometric analysis
+                    </div>
+                </section>
+
+                <!-- Experience Section -->
+                <section class="section">
+                    <h2 class="section-title">Relevant Experience</h2>
+                    
+                    <div class="experience-item">
+                        <div class="job-header">
+                            <div class="job-title-company">
+                                <h3>Quant Researcher Director (promoted from VP)</h3>
+                                <p class="company">TD Securities</p>
+                            </div>
+                            <div class="job-period">Oct 2020 — Jun 2024</div>
+                        </div>
+                        <ul>
+                            <li>Architected multi-asset research platform covering 60+ fixed income issuers across 17 currencies with proprietary relative value algorithms, data pipelines, and automated trading recommendations</li>
+                            <li>Scaled team from 1 to 7 researchers expanding from fixed income to FX/commodities while establishing backtesting frameworks and research methodologies adopted across trading desks</li>
+                            <li>Pioneered NLP market intelligence analyzing central bank communications with state-of-the-art sentiment scoring, delivering statistically significant alpha signals with robust backtesting validation</li>
+                            <li>Engineered cloud-ready delivery infrastructure with monitoring frameworks and real-time dashboards, enabling seamless IT deployment while reducing research-to-decision latency</li>
+                        </ul>
+                    </div>
+
+                    <div class="experience-item">
+                        <div class="job-header">
+                            <div class="job-title-company">
+                                <h3>Lead Data Scientist/ ML Engineer</h3>
+                                <p class="company">Swiss Life</p>
+                            </div>
+                            <div class="job-period">Nov 2018 — Oct 2020</div>
+                        </div>
+                        <ul>
+                            <li>Architected and deployed production-scale multi-factor robo-advisor leveraging genetic algorithms for optimal asset selection and LSTM neural networks for temporal pattern recognition, enabling automated portfolio construction, optimization, and dynamic rebalancing based on individual risk profiles and factor exposure modeling</li>
+                            <li>Progressed from individual contributor to leading 3 data scientists while implementing feedback loops with asset managers to optimize factor-based portfolio management framework with real-time risk monitoring</li>
+                        </ul>
+                    </div>
+
+                    <div class="experience-item">
+                        <div class="job-header">
+                            <div class="job-title-company">
+                                <h3>Senior Research Scientist/Assistant Prof.</h3>
+                                <p class="company">CERN</p>
+                            </div>
+                            <div class="job-period">Aug 2016 — Nov 2018</div>
+                        </div>
+                        <ul>
+                            <li>Pioneered breakthrough signal detection algorithms utilizing Random Forest ensemble methods for cosmic neutrino identification to extract statistically significant weak signals from extremely high-noise astrophysical datasets</li>
+                            <li>Led cross-functional research initiatives spanning multiple international collaborations, directly supervising 3 PhD researchers and numerous graduate students</li>
+                        </ul>
+                    </div>
+
+                    <div class="experience-item">
+                        <div class="job-header">
+                            <div class="job-title-company">
+                                <h3>Academic Researcher</h3>
+                                <p class="company">LPNHE Paris 6</p>
+                            </div>
+                            <div class="job-period">May 2013 — Aug 2016</div>
+                        </div>
+                        <ul>
+                            <li>Authored a pioneering phenomenology model for radio emission from cosmic ray showers and architected a Monte-Carlo based C++ simulation framework for radio detectors</li>
+                            <li>Led simulation tasks across 4 competing research projects, spearheading competitive analysis to optimize designs and improve signal detection efficiency</li>
+                        </ul>
+                    </div>
+
+                    <div class="experience-item">
+                        <div class="job-header">
+                            <div class="job-title-company">
+                                <h3>Visiting Scientist & Assistant Prof.</h3>
+                                <p class="company">Michigan State University & Université Aix-Marseille</p>
+                            </div>
+                            <div class="job-period">Jan 2012 — Apr 2013</div>
+                        </div>
+                        <ul>
+                            <li>Engineered a large-scale astronomical image analysis pipeline and developed automation systems for robotic telescopes, optimizing data processing and collection</li>
+                            <li>Implemented real-time processing algorithms and integrating multi-messenger astronomy data streams, significantly reducing response time for capturing transient cosmic phenomena</li>
+                            <li>Assisted in the teaching of Mathematics, Probability and Statistics and Physics modules at the University of Aix-Marseille for Bachelor and Master students</li>
+                        </ul>
+                    </div>
+                </section>
+            </div>
+
+            <!-- Right Column -->
+            <div class="right-column">
+                <!-- Skills Section -->
+                <section class="section">
+                    <h2 class="section-title">Skills</h2>
+                    
+                    <div class="skill-category">
+                        <h3>Programming Languages</h3>
+                        <ul>
+                            <li>Python, C++, R, SQL</li>
+                            <li>JavaScript, MATLAB</li>
+                            <li>Bash/Shell scripting</li>
+                        </ul>
+                    </div>
+
+                    <div class="skill-category">
+                        <h3>Machine Learning & Analytics</h3>
+                        <ul>
+                            <li>Scikit-learn, TensorFlow, PyTorch</li>
+                            <li>Random Forest, LSTM, NLP</li>
+                            <li>Genetic Algorithms, Monte Carlo</li>
+                            <li>Statistical Analysis, Econometrics</li>
+                        </ul>
+                    </div>
+
+                    <div class="skill-category">
+                        <h3>Tools & Platforms</h3>
+                        <ul>
+                            <li>Docker, Airflow, Spark</li>
+                            <li>Bloomberg, Reuters</li>
+                            <li>AWS, Git, Linux</li>
+                            <li>Jupyter, Dashboard Development</li>
+                        </ul>
+                    </div>
+
+                    <div class="skill-category">
+                        <h3>Financial Markets</h3>
+                        <ul>
+                            <li>Fixed Income Trading</li>
+                            <li>Systematic Alpha Generation</li>
+                            <li>Risk Management</li>
+                            <li>Portfolio Optimization</li>
+                        </ul>
+                    </div>
+                </section>
+
+                <!-- Education Section -->
+                <section class="section">
+                    <h2 class="section-title">Education</h2>
+                    
+                    <div class="education-item">
+                        <h3>Ph.D. in Particle Physics & Astrophysics</h3>
+                        <p class="institution">Université de la Méditerranée</p>
+                        <p class="period">Jan 2009 — Dec 2012</p>
+                        <p class="thesis">Thesis: "Search for Neutrinos from Transient Sources and Model Constraints Derivation"</p>
+                    </div>
+
+                    <div class="education-item">
+                        <h3>M.Sc. in Particle Physics</h3>
+                        <p class="institution">Paris 7 Denis Diderot</p>
+                        <p class="period">2008</p>
+                    </div>
+                </section>
+
+                <!-- Selected Achievements -->
+                <section class="section">
+                    <h2 class="section-title">Selected Achievements</h2>
+                    
+                    <div class="achievement-item">
+                        <h3>Publications & Research</h3>
+                        <p>Author/co-author of 100+ articles in top-tier journals. Breakthrough discoveries published in Science magazine.</p>
+                    </div>
+
+                    <div class="achievement-item">
+                        <h3>Awards & Recognition</h3>
+                        <p>Legendary Award (2023), Above and Beyond Award (2021) at TD Securities. NSF sponsorship for breakthrough press release (2018).</p>
+                    </div>
+
+                    <div class="achievement-item">
+                        <h3>Financial Impact</h3>
+                        <p>Generated $7M projected annual P&L through systematic research frameworks. Secured €31M in European Commission funding.</p>
+                    </div>
+                </section>
+
+                <!-- Languages -->
+                <section class="section">
+                    <h2 class="section-title">Languages</h2>
+                    <ul class="languages">
+                        <li>French (Native)</li>
+                        <li>English (Fluent)</li>
+                        <li>Arabic (Native)</li>
+                    </ul>
+                </section>
+            </div>
+        </div>
+        </div>
+    </div>
+
+    <!-- JavaScript for PDF Download and Zoom -->
+    <script>
+        // Zoom functionality
+        let currentZoom = 1;
+        const minZoom = 0.5;
+        const maxZoom = 2;
+        const zoomStep = 0.1;
+        
+        const a4Container = document.querySelector('.a4-container');
+        const zoomLevel = document.getElementById('zoomLevel');
+        const zoomInBtn = document.getElementById('zoomIn');
+        const zoomOutBtn = document.getElementById('zoomOut');
+        
+        function updateZoom() {
+            a4Container.style.transform = `scale(${currentZoom})`;
+            zoomLevel.textContent = Math.round(currentZoom * 100) + '%';
+            
+            // Update button states
+            zoomInBtn.disabled = currentZoom >= maxZoom;
+            zoomOutBtn.disabled = currentZoom <= minZoom;
+            
+            // Adjust container margin for better centering
+            const marginTop = currentZoom < 1 ? 60 + (1 - currentZoom) * 200 : 60;
+            a4Container.style.marginTop = marginTop + 'px';
+        }
+        
+        zoomInBtn.addEventListener('click', function() {
+            if (currentZoom < maxZoom) {
+                currentZoom = Math.min(maxZoom, currentZoom + zoomStep);
+                updateZoom();
+            }
+        });
+        
+        zoomOutBtn.addEventListener('click', function() {
+            if (currentZoom > minZoom) {
+                currentZoom = Math.max(minZoom, currentZoom - zoomStep);
+                updateZoom();
+            }
+        });
+        
+        // Keyboard shortcuts for zoom
+        document.addEventListener('keydown', function(e) {
+            if (e.ctrlKey || e.metaKey) {
+                if (e.key === '=' || e.key === '+') {
+                    e.preventDefault();
+                    zoomInBtn.click();
+                } else if (e.key === '-') {
+                    e.preventDefault();
+                    zoomOutBtn.click();
+                } else if (e.key === '0') {
+                    e.preventDefault();
+                    currentZoom = 1;
+                    updateZoom();
+                }
+            }
+        });
+        
+        // Mouse wheel zoom
+        a4Container.addEventListener('wheel', function(e) {
+            if (e.ctrlKey || e.metaKey) {
+                e.preventDefault();
+                if (e.deltaY < 0) {
+                    zoomInBtn.click();
+                } else {
+                    zoomOutBtn.click();
+                }
+            }
+        });
+        
+        // Initialize zoom
+        updateZoom();
+
+        // PDF Download functionality
+        document.getElementById('downloadPDF').addEventListener('click', function() {
+            // Hide controls temporarily
+            const downloadBtn = document.querySelector('.download-controls');
+            const zoomControls = document.querySelector('.zoom-controls');
+            const backBtn = document.querySelector('.back-to-portfolio');
+            downloadBtn.style.display = 'none';
+            zoomControls.style.display = 'none';
+            backBtn.style.display = 'none';
+            
+            // Reset zoom for PDF generation
+            const originalZoom = currentZoom;
+            currentZoom = 1;
+            updateZoom();
+            
+            // Get the CV content
+            const element = document.getElementById('cv-content');
+            
+            // Configure html2canvas options
+            const options = {
+                scale: 2, // Higher quality
+                useCORS: true,
+                allowTaint: true,
+                backgroundColor: '#ffffff',
+                width: 850, // US Letter width in pixels
+                height: 1100 // US Letter height in pixels
+            };
+            
+            // Generate canvas from HTML
+            html2canvas(element, options).then(function(canvas) {
+                // Create PDF
+                const { jsPDF } = window.jspdf;
+                const pdf = new jsPDF({
+                    orientation: 'portrait',
+                    unit: 'mm',
+                    format: 'letter'
+                });
+                
+                // Calculate dimensions
+                const imgWidth = 216; // US Letter width in mm
+                const pageHeight = 279; // US Letter height in mm
+                const imgHeight = (canvas.height * imgWidth) / canvas.width;
+                let heightLeft = imgHeight;
+                
+                let position = 0;
+                
+                // Add image to PDF
+                const imgData = canvas.toDataURL('image/jpeg', 1.0);
+                pdf.addImage(imgData, 'JPEG', 0, position, imgWidth, imgHeight);
+                heightLeft -= pageHeight;
+                
+                // Add additional pages if needed
+                while (heightLeft >= 0) {
+                    position = heightLeft - imgHeight;
+                    pdf.addPage();
+                    pdf.addImage(imgData, 'JPEG', 0, position, imgWidth, imgHeight);
+                    heightLeft -= pageHeight;
+                }
+                
+                // Download the PDF
+                pdf.save('Imen_Al_Samarai_Resume_Backup.pdf');
+                
+                // Restore controls and zoom
+                downloadBtn.style.display = 'block';
+                zoomControls.style.display = 'flex';
+                backBtn.style.display = 'block';
+                currentZoom = originalZoom;
+                updateZoom();
+            }).catch(function(error) {
+                console.error('Error generating PDF:', error);
+                downloadBtn.style.display = 'block';
+                zoomControls.style.display = 'flex';
+                backBtn.style.display = 'block';
+                currentZoom = originalZoom;
+                updateZoom();
+                alert('Error generating PDF. Please try again.');
+            });
+        });
+    </script>
+</body>
+</html>

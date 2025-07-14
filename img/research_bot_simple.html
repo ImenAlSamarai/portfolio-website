@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Research Bot Diagram</title>
+    <style>
+        body {
+            margin: 0;
+            padding: 40px;
+            background: white;
+            font-family: 'Inter', Arial, sans-serif;
+            width: 800px;
+            height: 600px;
+        }
+        .container {
+            width: 100%;
+            height: 100%;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+        }
+        .title {
+            font-size: 24px;
+            font-weight: bold;
+            color: #1a202c;
+            margin-bottom: 40px;
+            text-align: center;
+        }
+        .flow {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 30px;
+        }
+        .row {
+            display: flex;
+            align-items: center;
+            gap: 30px;
+        }
+        .box {
+            background: linear-gradient(135deg, #2d3748 0%, #4a5568 100%);
+            color: white;
+            padding: 20px;
+            border-radius: 12px;
+            text-align: center;
+            min-width: 180px;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+            border: 2px solid rgba(255,255,255,0.1);
+        }
+        .source { background: linear-gradient(135deg, #38a169 0%, #2f855a 100%); }
+        .process { background: linear-gradient(135deg, #3182ce 0%, #2c5282 100%); }
+        .output { background: linear-gradient(135deg, #d69e2e 0%, #b7791f 100%); }
+        .box-title {
+            font-weight: bold;
+            font-size: 16px;
+            margin-bottom: 8px;
+        }
+        .box-desc {
+            font-size: 12px;
+            opacity: 0.9;
+            line-height: 1.4;
+        }
+        .arrow {
+            font-size: 24px;
+            color: #2d3748;
+            font-weight: bold;
+        }
+        .metrics {
+            display: flex;
+            gap: 40px;
+            margin-top: 40px;
+        }
+        .metric {
+            text-align: center;
+            color: #2d3748;
+        }
+        .metric-number {
+            font-size: 20px;
+            font-weight: bold;
+            color: #3182ce;
+        }
+        .metric-label {
+            font-size: 12px;
+            margin-top: 4px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="title">AI Research Intelligence Platform</div>
+        <div class="flow">
+            <div class="row">
+                <div class="box source">
+                    <div class="box-title">ArXiv Source</div>
+                    <div class="box-desc">Monitors 50+ domains<br>Real-time ingestion</div>
+                </div>
+            </div>
+            <div class="arrow">↓</div>
+            <div class="row">
+                <div class="box process">
+                    <div class="box-title">Selector Agent</div>
+                    <div class="box-desc">AI paper selection<br>Relevance scoring</div>
+                </div>
+                <div class="arrow">→</div>
+                <div class="box process">
+                    <div class="box-title">Content Agent</div>
+                    <div class="box-desc">LLM generation<br>Market-ready articles</div>
+                </div>
+            </div>
+            <div class="arrow">↓</div>
+            <div class="row">
+                <div class="box process">
+                    <div class="box-title">Visual Agent</div>
+                    <div class="box-desc">Image generation<br>Brand consistency</div>
+                </div>
+                <div class="arrow">→</div>
+                <div class="box source">
+                    <div class="box-title">MongoDB</div>
+                    <div class="box-desc">Data storage<br>Processing history</div>
+                </div>
+            </div>
+            <div class="arrow">↓</div>
+            <div class="row">
+                <div class="box output">
+                    <div class="box-title">Publishing Platform</div>
+                    <div class="box-desc">Multi-platform distribution<br>Automated scheduling</div>
+                </div>
+            </div>
+        </div>
+        <div class="metrics">
+            <div class="metric">
+                <div class="metric-number">1000+</div>
+                <div class="metric-label">Papers Daily</div>
+            </div>
+            <div class="metric">
+                <div class="metric-number">50+</div>
+                <div class="metric-label">Domains</div>
+            </div>
+            <div class="metric">
+                <div class="metric-number">$12B+</div>
+                <div class="metric-label">Market Size</div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

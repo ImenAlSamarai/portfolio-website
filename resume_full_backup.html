@@ -1,0 +1,475 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Imen Al Samarai - Resume (Full Version Backup)</title>
+    <link rel="stylesheet" href="cv/resume.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <!-- jsPDF Library for PDF generation -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/html2canvas/1.4.1/html2canvas.min.js"></script>
+    
+    <!-- SEO and Open Graph -->
+    <meta name="description" content="Imen Al Samarai - Technical Leader with PhD in Physics and proven track record scaling teams and building ML systems. Seeking entrepreneurial opportunities.">
+    <meta property="og:title" content="Imen Al Samarai - Resume">
+    <meta property="og:description" content="Technical leader with deep ML expertise, proven team scaling ability, and track record of building production systems from scratch.">
+    <meta property="og:type" content="website">
+    
+    <style>
+        /* ONLY add minimal spacing adjustments - no color or design changes */
+        .main-content {
+            padding-bottom: 40px; /* Add space at bottom of page, less than header space */
+        }
+        
+        /* Clean page break styling */
+        .page-break {
+            page-break-before: always;
+            margin-top: 40px;
+            padding-top: 40px;
+        }
+        
+        @media print {
+            .page-break {
+                page-break-before: always;
+                margin-top: 0;
+                padding-top: 40px;
+            }
+            
+            .main-content {
+                padding-bottom: 20mm; /* Space at bottom in print */
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Back to Portfolio Button -->
+    <div class="back-to-portfolio">
+        <a href="index.html" class="back-btn">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path d="M19 12H5M12 19l-7-7 7-7" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+            </svg>
+            Back to Portfolio
+        </a>
+    </div>
+
+    <!-- Zoom Controls -->
+    <div class="zoom-controls">
+        <button class="zoom-btn" id="zoomOut">−</button>
+        <span class="zoom-level" id="zoomLevel">100%</span>
+        <button class="zoom-btn" id="zoomIn">+</button>
+    </div>
+
+    <!-- Download Button -->
+    <div class="download-controls">
+        <button id="downloadPDF" class="download-btn">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                <polyline points="14,2 14,8 20,8" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                <line x1="16" y1="13" x2="8" y2="13" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                <line x1="16" y1="17" x2="8" y2="17" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                <polyline points="10,9 9,9 8,9" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+            </svg>
+            Download PDF
+        </button>
+    </div>
+
+    <!-- A4 Page Container -->
+    <div class="a4-container">
+        <div class="cv-page" id="cv-content">
+        <!-- Header Section -->
+        <header class="header">
+            <div class="header-left">
+                <h1>Imen Al Samarai</h1>
+                <p class="subtitle">Technical Leader & Entrepreneurial Candidate</p>
+            </div>
+            <div class="header-right">
+                <p>imen.alsamarai@gmail.com</p>
+                <p>+33 6 XX XX XX XX</p>
+                <p><a href="https://linkedin.com/in/imenalsamarai">linkedin.com/in/imenalsamarai</a></p>
+                <p><a href="https://github.com/ImenAlSamarai">github.com/ImenAlSamarai</a></p>
+            </div>
+        </header>
+
+        <!-- Main Content Grid -->
+        <div class="main-content">
+            <!-- Left Column -->
+            <div class="left-column">
+                <!-- Profile Section -->
+                <section class="section">
+                    <h2 class="section-title">Profile</h2>
+                    <p>Technical leader with deep ML expertise and proven track record building production systems from concept to deployment. Successfully scaled quantitative research teams (individual contributor to 7-person director role), generated $7M+ P&L through systematic trading platforms, and pioneered breakthrough ML applications from CERN to finance. Published 100+ research papers including Science breakthrough, secured €31M in competitive funding. Currently exploring entrepreneurship and seeking co-founder partnerships to build transformative AI-driven ventures.</p>
+                </section>
+
+                <!-- Core Strengths -->
+                <section class="section">
+                    <h2 class="section-title">Core Entrepreneurial Strengths</h2>
+                    <div class="expertise-item">
+                        <strong>Technical Execution:</strong> Built production ML systems from concept to deployment across academia and finance. Deep expertise in Python/C++, machine learning (TensorFlow, PyTorch, Random Forest, LSTM), NLP, and distributed systems.
+                    </div>
+                    <div class="expertise-item">
+                        <strong>Team Building & Leadership:</strong> Repeatedly scaled high-performing technical teams across multiple organizations. Proven ability to hire, develop, and retain top talent while delivering complex projects.
+                    </div>
+                    <div class="expertise-item">
+                        <strong>Market Understanding:</strong> Deep domain expertise across AI/ML applications, quantitative finance, research automation, and scientific computing with proven commercial applications.
+                    </div>
+                    <div class="expertise-item">
+                        <strong>Ground-up Product Development:</strong> Track record building sophisticated systems from scratch: systematic trading platforms, robo-advisory engines, breakthrough signal detection algorithms with measurable business impact.
+                    </div>
+                </section>
+
+                <!-- Experience Section -->
+                <section class="section">
+                    <h2 class="section-title">Leadership & Technical Experience</h2>
+                    
+                    <div class="experience-item">
+                        <div class="job-header">
+                            <div class="job-title-company">
+                                <h3>Director, Quantitative Research</h3>
+                                <p class="company">TD Securities</p>
+                            </div>
+                            <div class="job-period">Oct 2020 — Jun 2023</div>
+                        </div>
+                        <ul>
+                            <li>Built TD's systematic research platform from concept to firm-wide adoption across multiple trading desks</li>
+                            <li>Scaled team from individual contributor to directing 7 PhD-level researchers while expanding to multi-asset strategies</li>
+                            <li>Generated $7M+ projected annual P&L through ML-driven alpha signals with validated backtesting frameworks</li>
+                            <li>Pioneered NLP applications for central bank sentiment analysis, delivering production-grade market intelligence tools</li>
+                        </ul>
+                    </div>
+
+                    <div class="experience-item">
+                        <div class="job-header">
+                            <div class="job-title-company">
+                                <h3>Lead Data Scientist & ML Engineer</h3>
+                                <p class="company">Swiss Life</p>
+                            </div>
+                            <div class="job-period">Nov 2018 — Oct 2020</div>
+                        </div>
+                        <ul>
+                            <li>Architected and deployed production robo-advisor serving thousands of clients using genetic algorithms and LSTM networks</li>
+                            <li>Scaled from individual contributor to leading 3-person data science team while delivering measurable client outcomes</li>
+                        </ul>
+                    </div>
+                </section>
+            </div>
+
+            <!-- Right Column -->
+            <div class="right-column">
+                <!-- Education -->
+                <section class="section">
+                    <h2 class="section-title">Education</h2>
+                    
+                    <div class="education-item">
+                        <h3>Ph.D. in Particle Physics & Astrophysics</h3>
+                        <p class="institution">Universite Aix-Marseille | 2009 — 2012</p>
+                        <p class="thesis">Focus: Signal detection in high-noise astrophysical data</p>
+                    </div>
+
+                    <div class="education-item">
+                        <h3>M.Sc. in Particle Physics</h3>
+                        <p class="institution">Paris 7 Denis Diderot | 2008</p>
+                    </div>
+                </section>
+
+                <!-- Technical Skills -->
+                <section class="section">
+                    <h2 class="section-title">Technical Skills</h2>
+                    
+                    <div class="skill-category">
+                        <h3>AI/ML & Data Science</h3>
+                        <ul>
+                            <li>Production ML: Python, TensorFlow, PyTorch</li>
+                            <li>Algorithms: Random Forest, LSTM, NLP</li>
+                            <li>Optimization: Genetic algorithms</li>
+                            <li>Statistics: Econometrics, signal processing</li>
+                        </ul>
+                    </div>
+
+                    <div class="skill-category">
+                        <h3>Engineering & Infrastructure</h3>
+                        <ul>
+                            <li>Languages: Python, C++, SQL, R</li>
+                            <li>Infrastructure: Docker, AWS, Spark, Airflow</li>
+                            <li>Data: Bloomberg/Reuters APIs, MongoDB</li>
+                            <li>Systems: Linux, Git, high-performance computing</li>
+                        </ul>
+                    </div>
+
+                    <div class="skill-category">
+                        <h3>Business Domains</h3>
+                        <ul>
+                            <li>Quantitative Finance: Systematic trading, portfolio optimization</li>
+                            <li>Research Automation: Content generation, data processing</li>
+                            <li>Scientific Computing: Signal detection, statistical analysis</li>
+                            <li>Product Development: End-to-end system architecture</li>
+                        </ul>
+                    </div>
+                </section>
+
+                <!-- Current Exploration -->
+                <section class="section">
+                    <h2 class="section-title">Current Exploration</h2>
+                    <div class="expertise-item">
+                        <strong>AI Product Development:</strong> Building multi-agent systems for research automation and decision support tools. Exploring applications in content generation, market intelligence, and enterprise productivity.
+                    </div>
+                    <div class="expertise-item">
+                        <strong>Market Research:</strong> Investigating opportunities at the intersection of AI, finance, and research tools. Particularly interested in B2B SaaS applications leveraging domain-specific ML.
+                    </div>
+                    <div class="expertise-item">
+                        <strong>Co-founder Matching:</strong> Seeking technical or business co-founders with complementary skills for AI infrastructure, fintech, or enterprise software ventures.
+                    </div>
+                </section>
+            </div>
+        </div>
+
+        <!-- PAGE BREAK HERE - Exactly where you marked -->
+        <div class="page-break">
+            <div class="main-content">
+                <!-- Left Column - Continued Experience -->
+                <div class="left-column">
+                    <!-- Swiss Life continued -->
+                    <div class="experience-item">
+                        <ul>
+                            <li>Built complete ML pipeline: client profiling, automated rebalancing, real-time risk monitoring, and portfolio optimization</li>
+                        </ul>
+                    </div>
+
+                    <div class="experience-item">
+                        <div class="job-header">
+                            <div class="job-title-company">
+                                <h3>Senior Research Scientist</h3>
+                                <p class="company">CERN</p>
+                            </div>
+                            <div class="job-period">Aug 2016 — Nov 2018</div>
+                        </div>
+                        <ul>
+                            <li>Led breakthrough discovery of cosmic neutrino sources using Random Forest ML algorithms—published in Science magazine</li>
+                            <li>Managed international collaborations across multiple institutions while supervising 3 PhD researchers</li>
+                            <li>Developed scalable signal detection frameworks for multi-terabyte astrophysical datasets</li>
+                        </ul>
+                    </div>
+
+                    <div class="experience-item">
+                        <div class="job-header">
+                            <div class="job-title-company">
+                                <h3>Academic Researcher</h3>
+                                <p class="company">LPNHE Paris 6</p>
+                            </div>
+                            <div class="job-period">May 2013 — Aug 2016</div>
+                        </div>
+                        <ul>
+                            <li>Authored novel phenomenological model and built C++ simulation framework adopted across 4 competing research projects</li>
+                            <li>Secured €7M experimental deployment through competitive technical proposals and international partnerships</li>
+                        </ul>
+                    </div>
+
+                    <div class="experience-item">
+                        <div class="job-header">
+                            <div class="job-title-company">
+                                <h3>Visiting Scientist & Assistant Professor</h3>
+                                <p class="company">Michigan State University & Université Aix-Marseille</p>
+                            </div>
+                            <div class="job-period">Jan 2012 — Apr 2013</div>
+                        </div>
+                        <ul>
+                            <li>Built real-time image processing pipelines for autonomous telescope networks enabling near-instant detection of transient events</li>
+                            <li>Integrated multimodal astronomical data streams for high-energy event identification, advancing early-warning systems</li>
+                            <li>Taught physics, mathematics, and statistics courses while mentoring graduate researchers</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <!-- Right Column - Recognition & Languages -->
+                <div class="right-column">
+                    <!-- Recognition -->
+                    <section class="section">
+                        <h2 class="section-title">Recognition & Impact</h2>
+                        
+                        <div class="achievement-item">
+                            <h3>Research Excellence</h3>
+                            <p>100+ peer-reviewed publications with breakthrough discovery featured in Science magazine and NSF press releases.</p>
+                        </div>
+
+                        <div class="achievement-item">
+                            <h3>Industry Recognition</h3>
+                            <p>Legendary Award (2023), Above and Beyond Award (2021) at TD Securities for systematic research leadership.</p>
+                        </div>
+
+                        <div class="achievement-item">
+                            <h3>Financial Impact</h3>
+                            <p>Generated $7M+ annual P&L through systematic research platforms. Secured €31M in competitive research funding.</p>
+                        </div>
+                    </section>
+
+                    <!-- Languages -->
+                    <section class="section">
+                        <h2 class="section-title">Languages</h2>
+                        <ul class="languages">
+                            <li>French (Native)</li>
+                            <li>English (Fluent)</li>
+                            <li>Arabic (Native)</li>
+                        </ul>
+                    </section>
+                </div>
+            </div>
+        </div>
+        
+        </div>
+    </div>
+
+    <!-- JavaScript for PDF Download and Zoom -->
+    <script>
+        // Zoom functionality
+        let currentZoom = 1;
+        const minZoom = 0.5;
+        const maxZoom = 2;
+        const zoomStep = 0.1;
+        
+        const a4Container = document.querySelector('.a4-container');
+        const zoomLevel = document.getElementById('zoomLevel');
+        const zoomInBtn = document.getElementById('zoomIn');
+        const zoomOutBtn = document.getElementById('zoomOut');
+        
+        function updateZoom() {
+            a4Container.style.transform = `scale(${currentZoom})`;
+            zoomLevel.textContent = Math.round(currentZoom * 100) + '%';
+            
+            // Update button states
+            zoomInBtn.disabled = currentZoom >= maxZoom;
+            zoomOutBtn.disabled = currentZoom <= minZoom;
+            
+            // Adjust container margin for better centering
+            const marginTop = currentZoom < 1 ? 60 + (1 - currentZoom) * 200 : 60;
+            a4Container.style.marginTop = marginTop + 'px';
+        }
+        
+        zoomInBtn.addEventListener('click', function() {
+            if (currentZoom < maxZoom) {
+                currentZoom = Math.min(maxZoom, currentZoom + zoomStep);
+                updateZoom();
+            }
+        });
+        
+        zoomOutBtn.addEventListener('click', function() {
+            if (currentZoom > minZoom) {
+                currentZoom = Math.max(minZoom, currentZoom - zoomStep);
+                updateZoom();
+            }
+        });
+        
+        // Keyboard shortcuts for zoom
+        document.addEventListener('keydown', function(e) {
+            if (e.ctrlKey || e.metaKey) {
+                if (e.key === '=' || e.key === '+') {
+                    e.preventDefault();
+                    zoomInBtn.click();
+                } else if (e.key === '-') {
+                    e.preventDefault();
+                    zoomOutBtn.click();
+                } else if (e.key === '0') {
+                    e.preventDefault();
+                    currentZoom = 1;
+                    updateZoom();
+                }
+            }
+        });
+        
+        // Mouse wheel zoom
+        a4Container.addEventListener('wheel', function(e) {
+            if (e.ctrlKey || e.metaKey) {
+                e.preventDefault();
+                if (e.deltaY < 0) {
+                    zoomInBtn.click();
+                } else {
+                    zoomOutBtn.click();
+                }
+            }
+        });
+        
+        // Initialize zoom
+        updateZoom();
+
+        // PDF Download functionality
+        document.getElementById('downloadPDF').addEventListener('click', function() {
+            // Hide controls temporarily
+            const downloadBtn = document.querySelector('.download-controls');
+            const zoomControls = document.querySelector('.zoom-controls');
+            const backBtn = document.querySelector('.back-to-portfolio');
+            downloadBtn.style.display = 'none';
+            zoomControls.style.display = 'none';
+            backBtn.style.display = 'none';
+            
+            // Reset zoom for PDF generation
+            const originalZoom = currentZoom;
+            currentZoom = 1;
+            updateZoom();
+            
+            // Get the CV content
+            const element = document.getElementById('cv-content');
+            
+            // Configure html2canvas options
+            const options = {
+                scale: 2, // Higher quality
+                useCORS: true,
+                allowTaint: true,
+                backgroundColor: '#ffffff',
+                width: element.offsetWidth,
+                height: element.offsetHeight
+            };
+            
+            // Generate canvas from HTML
+            html2canvas(element, options).then(function(canvas) {
+                // Create PDF
+                const { jsPDF } = window.jspdf;
+                const pdf = new jsPDF({
+                    orientation: 'portrait',
+                    unit: 'mm',
+                    format: 'a4'
+                });
+                
+                // Calculate dimensions
+                const imgWidth = 190; // A4 width minus margins
+                const pageHeight = 277; // A4 height minus margins
+                const imgHeight = (canvas.height * imgWidth) / canvas.width;
+                let heightLeft = imgHeight;
+                
+                let position = 0;
+                
+                // Add image to PDF
+                const imgData = canvas.toDataURL('image/jpeg', 1.0);
+                pdf.addImage(imgData, 'JPEG', 10, 10, imgWidth, imgHeight);
+                heightLeft -= pageHeight;
+                
+                // Add additional pages if needed
+                while (heightLeft >= 0) {
+                    position = heightLeft - imgHeight;
+                    pdf.addPage();
+                    pdf.addImage(imgData, 'JPEG', 10, position, imgWidth, imgHeight);
+                    heightLeft -= pageHeight;
+                }
+                
+                // Download the PDF
+                pdf.save('Imen_Al_Samarai_Resume_Full.pdf');
+                
+                // Restore controls and zoom
+                downloadBtn.style.display = 'block';
+                zoomControls.style.display = 'flex';
+                backBtn.style.display = 'block';
+                currentZoom = originalZoom;
+                updateZoom();
+            }).catch(function(error) {
+                console.error('Error generating PDF:', error);
+                downloadBtn.style.display = 'block';
+                zoomControls.style.display = 'flex';
+                backBtn.style.display = 'block';
+                currentZoom = originalZoom;
+                updateZoom();
+                alert('Error generating PDF. Please try again.');
+            });
+        });
+    </script>
+</body>
+</html>

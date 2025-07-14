@@ -1,0 +1,550 @@
+/* Professional CV Styles - A4 Format with PDF Download */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+    background: #f5f5f5;
+    padding: 20px;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+
+/* Back to Portfolio Button */
+.back-to-portfolio {
+    position: fixed;
+    top: 20px;
+    left: 50%;
+    transform: translateX(-50%);
+    z-index: 1000;
+}
+
+.back-btn {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    background: white;
+    color: #374151;
+    border: 1px solid #e5e7eb;
+    padding: 10px 16px;
+    border-radius: 8px;
+    font-size: 14px;
+    font-weight: 500;
+    text-decoration: none;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    transition: all 0.2s ease;
+}
+
+.back-btn:hover {
+    background: #f9fafb;
+    border-color: #2563EB;
+    color: #2563EB;
+    transform: translateY(-1px);
+    box-shadow: 0 6px 16px rgba(0, 0, 0, 0.15);
+}
+
+/* Zoom Controls */
+.zoom-controls {
+    position: fixed;
+    top: 20px;
+    left: 20px;
+    z-index: 1000;
+    display: flex;
+    gap: 8px;
+    background: white;
+    padding: 8px;
+    border-radius: 8px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+}
+
+.zoom-btn {
+    width: 36px;
+    height: 36px;
+    border: 1px solid #e5e7eb;
+    background: white;
+    border-radius: 6px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 16px;
+    font-weight: 500;
+    color: #374151;
+    transition: all 0.2s ease;
+}
+
+.zoom-btn:hover {
+    background: #f9fafb;
+    border-color: #2563EB;
+    color: #2563EB;
+}
+
+.zoom-btn:disabled {
+    opacity: 0.5;
+    cursor: not-allowed;
+    background: #f9fafb;
+    border-color: #e5e7eb;
+    color: #9ca3af;
+}
+
+.zoom-btn:disabled:hover {
+    background: #f9fafb;
+    border-color: #e5e7eb;
+    color: #9ca3af;
+}
+
+.zoom-level {
+    display: flex;
+    align-items: center;
+    padding: 0 12px;
+    font-size: 13px;
+    font-weight: 500;
+    color: #6b7280;
+    min-width: 60px;
+    justify-content: center;
+}
+
+/* Download Controls */
+.download-controls {
+    position: fixed;
+    top: 20px;
+    right: 20px;
+    z-index: 1000;
+}
+
+.download-btn {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    background: #2563EB;
+    color: white;
+    border: none;
+    padding: 12px 20px;
+    border-radius: 8px;
+    font-size: 14px;
+    font-weight: 500;
+    cursor: pointer;
+    box-shadow: 0 4px 12px rgba(37, 99, 235, 0.3);
+    transition: all 0.2s ease;
+}
+
+.download-btn:hover {
+    background: #1D4ED8;
+    transform: translateY(-1px);
+    box-shadow: 0 6px 16px rgba(37, 99, 235, 0.4);
+}
+
+.download-btn:active {
+    transform: translateY(0);
+}
+
+/* A4 Container with Zoom */
+.a4-container {
+    max-width: 850px; /* US Letter width simulation */
+    margin: 80px auto 0; /* Increased top margin for back button */
+    background: white;
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
+    border-radius: 8px;
+    overflow: hidden;
+    transform-origin: top center;
+    transition: transform 0.3s ease;
+}
+
+/* CV Page */
+.cv-page {
+    width: 850px; /* US Letter width */
+    min-height: 1100px; /* US Letter height */
+    padding: 60px 50px 60px 70px;
+    background: white;
+    font-size: 11px;
+    line-height: 1.4;
+    color: #4a5568;
+    position: relative;
+}
+
+/* Page break indicator */
+.cv-page::after {
+    content: '';
+    position: absolute;
+    top: 1100px; /* US Letter height */
+    left: 0;
+    right: 0;
+    height: 2px;
+    background: linear-gradient(to right, #e5e7eb 0%, #9ca3af 50%, #e5e7eb 100%);
+    z-index: 10;
+}
+
+/* Page break text indicator */
+.cv-page::before {
+    content: 'Page Break';
+    position: absolute;
+    top: 1090px;
+    right: 20px;
+    font-size: 10px;
+    color: #9ca3af;
+    background: white;
+    padding: 2px 8px;
+    border-radius: 4px;
+    z-index: 11;
+}
+
+/* Header Styles */
+.header {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    margin-bottom: 50px;
+    padding-bottom: 0;
+    margin-top: 10px;
+}
+
+.header-left h1 {
+    font-size: 42px;
+    font-weight: 700;
+    color: #2563EB;
+    margin-bottom: 8px;
+    letter-spacing: -0.02em;
+    line-height: 1.1;
+}
+
+.header-left .subtitle {
+    font-size: 14px;
+    color: #6B7280;
+    font-weight: 400;
+    line-height: 1.4;
+}
+
+.header-right {
+    text-align: right;
+    font-size: 11px;
+    color: #6B7280;
+    line-height: 1.4;
+    margin-top: 5px;
+}
+
+.header-right p {
+    margin-bottom: 2px;
+}
+
+.header-right a {
+    color: #2563EB;
+    text-decoration: none;
+}
+
+.header-right a:hover {
+    text-decoration: underline;
+}
+
+/* Main Content Grid */
+.main-content {
+    display: grid;
+    grid-template-columns: 2.2fr 1fr;
+    gap: 40px;
+}
+
+/* Section Styles */
+.section {
+    margin-bottom: 40px;
+}
+
+.section-title {
+    font-size: 16px;
+    font-weight: 600;
+    color: #2563EB;
+    margin-bottom: 20px;
+    letter-spacing: -0.01em;
+}
+
+.section p {
+    margin-bottom: 15px;
+    text-align: justify;
+}
+
+/* Core Expertise Styles */
+.expertise-item {
+    margin-bottom: 16px;
+    text-align: justify;
+}
+
+.expertise-item strong {
+    color: #1F2937;
+    font-weight: 600;
+}
+
+/* Experience Styles */
+.experience-item {
+    margin-bottom: 24px;
+    padding-bottom: 16px;
+}
+
+.job-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    margin-bottom: 12px;
+}
+
+.job-title-company h3 {
+    font-size: 14px;
+    font-weight: 700;
+    color: #1F2937;
+    margin-bottom: 4px;
+    line-height: 1.3;
+}
+
+.company {
+    font-size: 12px;
+    color: #2563EB;
+    font-weight: 500;
+}
+
+.job-period {
+    font-size: 11px;
+    color: #6B7280;
+    font-weight: 400;
+    white-space: nowrap;
+    margin-left: 20px;
+}
+
+.experience-item ul {
+    margin: 6px 0;
+    padding-left: 16px;
+}
+
+.experience-item li {
+    margin-bottom: 4px;
+    text-align: justify;
+    line-height: 1.3;
+}
+
+/* Right Column Styles */
+.right-column {
+    font-size: 10px;
+}
+
+.right-column .section-title {
+    font-size: 14px;
+    margin-bottom: 15px;
+}
+
+/* Skills Styles */
+.skill-category {
+    margin-bottom: 18px;
+}
+
+.skill-category h3 {
+    font-size: 12px;
+    font-weight: 600;
+    color: #1F2937;
+    margin-bottom: 5px;
+}
+
+.skill-category ul {
+    list-style: none;
+    padding: 0;
+}
+
+.skill-category li {
+    margin-bottom: 2px;
+    color: #4B5563;
+    line-height: 1.3;
+}
+
+/* Education Styles */
+.education-item {
+    margin-bottom: 24px;
+}
+
+.education-item h3 {
+    font-size: 12px;
+    font-weight: 600;
+    color: #1F2937;
+    margin-bottom: 4px;
+    line-height: 1.3;
+}
+
+.institution {
+    color: #2563EB;
+    font-weight: 500;
+    margin-bottom: 2px;
+}
+
+.period {
+    color: #6B7280;
+    font-size: 10px;
+    margin-bottom: 4px;
+}
+
+.thesis {
+    color: #4B5563;
+    font-size: 10px;
+    line-height: 1.4;
+}
+
+/* Achievement Styles */
+.achievement-item {
+    margin-bottom: 20px;
+}
+
+.achievement-item h3 {
+    font-size: 11px;
+    font-weight: 600;
+    color: #1F2937;
+    margin-bottom: 5px;
+}
+
+.achievement-item p {
+    color: #4B5563;
+    line-height: 1.4;
+    margin-bottom: 0;
+}
+
+/* Languages */
+.languages {
+    list-style: none;
+    padding: 0;
+}
+
+.languages li {
+    margin-bottom: 4px;
+    color: #4B5563;
+}
+
+/* Print Styles */
+@media print {
+    body {
+        background: white;
+        padding: 0;
+    }
+    
+    .download-controls,
+    .zoom-controls,
+    .back-to-portfolio {
+        display: none;
+    }
+    
+    .a4-container {
+        box-shadow: none;
+        border-radius: 0;
+        max-width: none;
+        margin-top: 0;
+    }
+    
+    .cv-page {
+        width: auto;
+        min-height: auto;
+        padding: 20mm;
+    }
+    
+    /* Hide page break indicators when printing */
+    .cv-page::after,
+    .cv-page::before {
+        display: none;
+    }
+    
+    .header-left h1 {
+        font-size: 32px;
+    }
+    
+    .section {
+        margin-bottom: 20px;
+    }
+    
+    .experience-item {
+        margin-bottom: 16px;
+        page-break-inside: avoid;
+    }
+    
+    .main-content {
+        gap: 30px;
+    }
+}
+
+/* Responsive Styles */
+@media (max-width: 900px) {
+    body {
+        padding: 10px;
+    }
+    
+    .a4-container {
+        max-width: 100%;
+        margin-top: 100px;
+    }
+    
+    .cv-page {
+        width: 100%;
+        min-height: auto;
+        padding: 30px 20px;
+    }
+    
+    .download-controls {
+        position: relative;
+        top: auto;
+        right: auto;
+        margin-bottom: 20px;
+        text-align: center;
+    }
+    
+    .zoom-controls {
+        position: relative;
+        top: auto;
+        left: auto;
+        margin-bottom: 20px;
+        justify-content: center;
+    }
+    
+    .back-to-portfolio {
+        position: relative;
+        top: auto;
+        left: auto;
+        transform: none;
+        margin-bottom: 20px;
+        text-align: center;
+    }
+    
+    .header {
+        flex-direction: column;
+        gap: 15px;
+    }
+    
+    .header-right {
+        text-align: left;
+    }
+    
+    .main-content {
+        grid-template-columns: 1fr;
+        gap: 30px;
+    }
+    
+    .job-header {
+        flex-direction: column;
+        gap: 5px;
+    }
+    
+    .job-period {
+        margin-left: 0;
+    }
+    
+    .header-left h1 {
+        font-size: 28px;
+    }
+}
+
+@media (max-width: 480px) {
+    .cv-page {
+        padding: 20px 15px;
+    }
+    
+    .header-left h1 {
+        font-size: 24px;
+    }
+    
+    .download-btn {
+        padding: 10px 16px;
+        font-size: 12px;
+    }
+}

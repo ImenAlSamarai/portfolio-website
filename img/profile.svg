@@ -1,0 +1,7 @@
+<!-- SVG Placeholder for Profile Image -->
+<svg width="300" height="300" viewBox="0 0 300 300" xmlns="http://www.w3.org/2000/svg">
+  <rect width="300" height="300" fill="#112240"/>
+  <circle cx="150" cy="120" r="40" fill="#64ffda" opacity="0.3"/>
+  <rect x="110" y="180" width="80" height="60" rx="10" fill="#64ffda" opacity="0.3"/>
+  <text x="150" y="260" text-anchor="middle" font-family="Arial, sans-serif" font-size="14" fill="#8892b0">Add Your Photo</text>
+</svg>

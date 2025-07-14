@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Portfolio Test</title>
+    <link rel="stylesheet" href="css/main.css">
+</head>
+<body>
+    <div id="test-container">
+        <h1>Portfolio Test</h1>
+        <div id="featured-projects-grid"></div>
+        <img src="img/ET.png" alt="Test Image" style="max-width: 200px;" onerror="console.error('Image failed:', this.src)">
+        <img src="img/portfolio_performance_analysis.png" alt="Test Image 2" style="max-width: 200px;" onerror="console.error('Image failed:', this.src)">
+    </div>
+    
+    <script src="js/data.js"></script>
+    <script>
+        console.log('Test page loaded');
+        console.log('Portfolio data:', window.portfolioData);
+        
+        // Test image loading
+        if (window.portfolioData && window.portfolioData.featuredProjects) {
+            const projects = window.portfolioData.featuredProjects;
+            console.log('Found', projects.length, 'featured projects');
+            projects.forEach((project, index) => {
+                console.log(`Project ${index + 1}:`, project.title, 'Image:', project.image);
+            });
+        }
+    </script>
+</body>
+</html>
